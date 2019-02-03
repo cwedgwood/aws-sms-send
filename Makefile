@@ -20,4 +20,7 @@ $(proj): Makefile *.go
 	go build
 	strip $(proj)
 
-.PHONY: all runtest fmt clean
+install: $(proj)
+	install --compare $(proj) /usr/local/bin/
+
+.PHONY: all runtest fmt clean install
