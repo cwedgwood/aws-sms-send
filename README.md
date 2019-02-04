@@ -7,9 +7,9 @@ SNS/SMS API.
 Usage
 ---
 
-    ./aws-sms-send -verbose +15551231234 "your pizza is ready"
+    aws-sms-send -verbose +15551231234 "your pizza is ready"
 
-    ./aws-sms-send -transactional +15551231234 "ALERT: Thromdibulator malfunction, rebooting."
+    aws-sms-send -transactional +15551231234 "ALERT: Thromdibulator malfunction, rebooting."
 
 How to get
 ---
