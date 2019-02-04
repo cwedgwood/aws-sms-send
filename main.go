@@ -85,7 +85,7 @@ func main() {
 		pr, err = snsSvc.Publish(inp)
 		if err != nil {
 			fmt.Fprintf(os.Stderr, "ERROR sending message: %v\n", err)
-			os.Exit(1)
+			os.Exit(2)
 		}
 		debugPrint("Got", pr)
 	}

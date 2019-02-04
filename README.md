@@ -26,3 +26,9 @@ Or else you might choose to clone & build:
 	make
 	#or
 	sudo make install
+
+Exit Codes
+---
+
+1 - Usage (command line arguments) wrong
+2 - AWS API Error
