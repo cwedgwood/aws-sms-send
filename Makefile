@@ -17,8 +17,7 @@ clean:
 
 $(proj): Makefile *.go
 	go vet
-	go build
-	strip $(proj)
+	go build -ldflags="-w -s"
 
 install: $(proj)
 	install --compare $(proj) /usr/local/bin/
