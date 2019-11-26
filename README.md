@@ -30,5 +30,6 @@ Or else you might choose to clone & build:
 Exit Codes
 ---
 
-1 - Usage (command line arguments) wrong
-2 - AWS API Error
+1 - Usage (command line arguments) wrong <br>
+2 - AWS API Error <br>
+3 - Local IP Resolution Error <br>
