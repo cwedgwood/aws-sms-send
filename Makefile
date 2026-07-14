@@ -15,7 +15,7 @@ clean:
 	rm -f *~ */*~ .*~ $(proj)
 	go clean
 
-$(proj): Makefile *.go
+$(proj): Makefile *.go go.mod go.sum
 	go vet
 	go build -ldflags="-w -s"
 

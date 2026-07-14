@@ -33,3 +33,7 @@ Exit Codes
 1 - Usage (command line arguments) wrong <br>
 2 - AWS API Error <br>
 3 - Local IP Resolution Error <br>
+
+Regions
+
+https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html
