@@ -1,39 +1,59 @@
-aws-sms-send
-===
+# aws-sms-send
 
-This is a minimalist tool I made to send messages using the AWS
-SNS/SMS API.
+A minimalist command-line tool to send an SMS message via the AWS SNS/SMS API.
 
-Usage
----
+> [!WARNING]
+> **This project is archived and no longer maintained.**
+>
+> When it was written, you could send an SMS to any number straight from AWS
+> SNS with almost no setup. That era is over. AWS now requires a **registered
+> origination identity** — 10DLC, a toll-free number, or a short code — plus an
+> attached resource policy before you can send application-to-person (A2P) SMS
+> to US recipients, and many other countries require sender-ID or number
+> registration too. Unregistered long-code sending has effectively been
+> retired. For casual or hobby use this tool no longer makes practical sense.
+>
+> **Consider a modern alternative.** For pushing notifications to browsers and
+> devices, [Web Push](https://www.w3.org/TR/push-api/) (the W3C Push API) is a
+> standards-based, no-per-message-cost option that mostly works across major
+> platforms today.
+>
+> The code is left here for historical reference.
 
-    aws-sms-send -verbose +15551231234 "your pizza is ready"
+## Usage
 
-    aws-sms-send -transactional +15551231234 "ALERT: Thromdibulator malfunction, rebooting."
+```console
+aws-sms-send -verbose +15551231234 "your pizza is ready"
 
-How to get
----
+aws-sms-send -transactional +15551231234 "ALERT: Thromdibulator malfunction, rebooting."
+```
 
-If you have Go:
+## Building
 
-	go get github.com/cwedgwood/aws-sms-send
+With Go installed, clone and build:
 
+```console
+git clone https://github.com/cwedgwood/aws-sms-send.git
+cd aws-sms-send
+make
+# or
+make install   # installs to /usr/local/bin/
+```
 
-Or else you might choose to clone & build:
+## Exit codes
 
-    git clone https://github.com/cwedgwood/aws-sms-send.git
-	cd aws-sms-send
-	make
-	#or
-	sudo make install
+| Code | Meaning                    |
+| ---- | -------------------------- |
+| 1    | Usage (bad arguments)      |
+| 2    | AWS API error              |
+| 3    | Local IP resolution error  |
 
-Exit Codes
----
+## Regions
 
-1 - Usage (command line arguments) wrong <br>
-2 - AWS API Error <br>
-3 - Local IP Resolution Error <br>
+See the AWS list of
+[supported SNS SMS regions and countries](https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html).
 
-Regions
+## License
 
-https://docs.aws.amazon.com/sns/latest/dg/sns-supported-regions-countries.html
+GPL-3.0 — see the license header in the source and
+<https://www.gnu.org/licenses/gpl-3.0.en.html>.
